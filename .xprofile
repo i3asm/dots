@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# This file runs when a DM logs you into a graphical session.
+# If you use startx/xinit like a Chad, this file will also be sourced.
+
+# Fix Gnome Apps Slow  Start due to failing services
+# Add this when you include flatpak in your system
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+setxkbmap -model pc104 -layout us,ara -variant ,mac -option grp:alt_space_toggle
+[ -f ~/.config/Xresources ] && xrdb -merge ~/.config/Xresources
+
+mpd &			# music player daemon-you might prefer it as a service though
+remaps &		# run the remaps script, switching caps/esc and more; check it for more info
+setbg &			# set the background with the `setbg` script
+dunst &			# dunst for notifications
+unclutter &		# Remove mouse when idle
+picom &	    	# some transparency
+# sxhkd &			# shortcuts
