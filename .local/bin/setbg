@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --bg-fill '/home/i3asm/.cache/i3lock/current/blur.png'

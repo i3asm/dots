@@ -1,0 +1,6 @@
+#!/bin/bash
+curl wttr.in/ruh?format="%c+%C+++%t"
+# case $BLOCK_BUTTON in
+# 	1) pgrep -x dunst >/dev/null && notify-send "🌡️ Weather condition" "$(curl wttr.in|head -5)";;
+# 	3) $1 -e echo "hi";;
+# esac
