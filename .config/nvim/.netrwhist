@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/i3asm/.nv/GLCache'
+let g:netrw_dirhist_4='/home/i3asm/.nv'
+let g:netrw_dirhist_3='/home/i3asm/.config/sxhkd'
+let g:netrw_dirhist_2='/home/i3asm/.config/vifm'
+let g:netrw_dirhist_1='/var/lib/plexmediaserver'

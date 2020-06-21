@@ -1,0 +1,62 @@
+#!bin/sh
+
+alias \
+	ydl="youtube-dl --add-metadata -ic" \
+	ydla="youtube-dl --add-metadata -xic -f 'bestaudio[ext=m4a]'" \
+	ydm="youtube-dl --add-metadata -xic -f 'bestaudio[ext=m4a]' -o '~/Music/%(title)s.%(ext)s' " \
+	v="nvim" \
+	xrr="xrdb ~/.config/Xresources" \
+	srb="source ~/.bashrc" \
+	srr="source ~/.config/zsh/.zshrc" \
+	escaps="setxkbmap -option caps:swapescape" \
+	sc="$EDITOR .local/bin/"
+function mkdirr(){
+	mkdir $1 && cd $1
+}
+# alias i3shut="i3exit shutdown"
+# alias i3rebo="i3exit reboot"
+# alias oldboi="ssh himym@192.168.100.83"
+# alias twitchcomments="RestreamChat.AppImage"
+
+# open configs
+alias cbr="v ~/.bashrc"
+alias cvr="v ~/.config/nvim/init.vim"
+alias czr="v ~/.config/zsh/.zshrc"
+
+# commands
+alias \
+	ls='ls -h --color=auto' \
+	ppttopdf='libreoffice --headless --invisible --convert-to pdf' \
+	:q="exit 0" \
+	qbtl="qbt torrent list" \
+	mupdf="mupdf -C d4c7b4" \
+	gti="git" \
+	g="git" \
+	gccc="gcc -Wall -ansi" \
+	psrv="php artisan serve " \
+	dsrv="python manage.py runserver 1.0.0.0:8000"
+	# psrv="php artisan serve --host $(hostname -I | awk '{print $1}')"
+
+# packages manageer
+alias \
+	sdi="sudo dnf install -y" \
+	sdu="sudo dnf update -y" \
+	sdr="sudo dnf remove" \
+	sdud="sudo dnf update --downloadonl" \
+	python="python3" \
+	pip="pip3" \
+	spi="sudo pacman -Sy" \
+	spu="sudo pacman -Syyu" \
+	spr="sudo pacman -R"
+
+# directories
+alias \
+	.="cd ../" \
+	..="cd ../../" \
+	...="cd ../../../" \
+	PR="~/dev/ilabor" \
+	CS="~/mega/CS/2020spring/" \
+	DL="~/Downloads"
+
+# Z command
+export _Z_DATA="$XDG_CACHE_HOME/z/z"
