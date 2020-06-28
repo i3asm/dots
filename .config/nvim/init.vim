@@ -6,7 +6,7 @@ set packpath+=~/.vim
 set nocompatible
 
 syntax enable
-colorscheme onedark
+colors deus
 
 " configure Vundle
 filetype off " without this vim emits a zero exit status, later, because of :ft off
@@ -102,8 +102,8 @@ autocmd FileType html,php inoremap &<space> &amp;<space>
 autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 
 " in case you forgot to sudo
-	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-	" cnoremap w!! %!sudo tee > /dev/null %
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+" cnoremap w!! %!sudo tee > /dev/null %
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
@@ -147,62 +147,63 @@ hi Normal ctermbg=none
 
 
 call plug#begin()
-	" install Vundle bundles
-	if filereadable(expand("~/.config/nvim/bundles"))
-		source ~/.config/nvim/vimrc.bundles
-	endif
+" install Vundle bundles
+if filereadable(expand("~/.config/nvim/bundles"))
+	source ~/.config/nvim/vimrc.bundles
+endif
 
-	Plug 'VundleVim/Vundle.vim'
-	Plug 'airblade/vim-gitgutter'
-	Plug 'altercation/vim-colors-solarized'
-	Plug 'austintaylor/vim-indentobject'
-	Plug 'christoomey/vim-tmux-navigator'
-	Plug 'juvenn/mustache.vim'
-	Plug 'kchmck/vim-coffee-script'
-	Plug 'ctrlpvim/ctrlp.vim'
-	Plug 'leafgarland/typescript-vim'
-	Plug 'majutsushi/tagbar'
-	Plug 'rking/ag.vim'
-	Plug 'garbas/vim-snipmate'
-	Plug 'MarcWeber/vim-addon-mw-utils'
-	Plug 'tomtom/tlib_vim'
-	Plug 'nathanaelkane/vim-indent-guides'
-	Plug 'nono/vim-handlebars'
-	Plug 'pangloss/vim-javascript'
-	Plug 'wookiehangover/jshint.vim'
-	Plug 'scrooloose/nerdtree'
-	Plug 'scrooloose/syntastic'
-	Plug 'slim-template/vim-slim'
-	Plug 'tpope/vim-bundler'
-	Plug 'tpope/vim-commentary'
-	Plug 'tpope/vim-cucumber'
-	Plug 'tpope/vim-dispatch'
-	Plug 'tpope/vim-endwise'
-	Plug 'tpope/vim-fugitive'
-	Plug 'tpope/vim-pastie'
-	Plug 'tpope/vim-ragtag'
-	Plug 'tpope/vim-rails'
-	Plug 'tpope/vim-repeat'
-	Plug 'tpope/vim-surround'
-	Plug 'tpope/vim-unimpaired'
-	Plug 'tpope/vim-vividchalk'
-	Plug 'vim-ruby/vim-ruby'
-	Plug 'vim-scripts/Align'
-	Plug 'vim-scripts/greplace.vim'
-	Plug 'vim-scripts/matchit.zip'
+Plug 'VundleVim/Vundle.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'austintaylor/vim-indentobject'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'juvenn/mustache.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'majutsushi/tagbar'
+Plug 'rking/ag.vim'
+Plug 'garbas/vim-snipmate'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nono/vim-handlebars'
+Plug 'pangloss/vim-javascript'
+Plug 'wookiehangover/jshint.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-pastie'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vividchalk'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/greplace.vim'
+Plug 'vim-scripts/matchit.zip'
 
-	Plug 'PotatoesMaster/i3-vim-syntax'
-	Plug 'OmniSharp/omnisharp-vim'
-	Plug 'mhartington/oceanic-next'
-	Plug 'baskerville/vim-sxhkdrc'
-	Plug 'joshdick/onedark.vim'
-	Plug 'itchyny/lightline.vim'
-	Plug 'vim-python/python-syntax'
-	Plug 'Chiel92/vim-autoformat'
-	Plug 'jwalton512/vim-blade'
-	Plug 'jiangmiao/auto-pairs'
-	Plug 'ryanoasis/vim-devicons'
-	Plug 'wakatime/vim-wakatime'
-	Plug 'gisphm/vim-gitignore'
-	call plug#end()
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'mhartington/oceanic-next'
+Plug 'baskerville/vim-sxhkdrc'
+Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'vim-python/python-syntax'
+Plug 'Chiel92/vim-autoformat'
+Plug 'jwalton512/vim-blade'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ryanoasis/vim-devicons'
+Plug 'wakatime/vim-wakatime'
+Plug 'gisphm/vim-gitignore'
+Plug 'ajmwagar/vim-deus'
+call plug#end()
 
