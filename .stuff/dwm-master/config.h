@@ -47,6 +47,7 @@ static const Rule rules[] = {
 	*/
 	/* class    instance      title       	 tags mask    isfloating   isterminal  noswallow  monitor */
 	{ "Gimp",     NULL,       NULL,       	    1 << 8,       0,           0,         0,        -1 },
+	/* { NULL,     NULL,       "MEGAsync",       	0,            1,           0,         0,        -1 }, */
 	{ "St",       NULL,       NULL,       	    0,            0,           1,         0,        -1 },
 	{ NULL,       NULL,       "Event Tester",   0,            0,           0,         1,        -1 },
 	{ NULL,      "spterm",    NULL,       	    SPTAG(0),     1,           1,         0,        -1 },
@@ -159,41 +160,41 @@ static Key keys[] = {
 { MODKEY                   , XK_backslash    , view       , {0} }                          , 
 /* { MODKEY|ShiftMask      , XK_backslash    , spawn      , SHCMD("") }                    , */
 
-	{ MODKEY              , XK_a          , togglegaps    , {0} }                                                    , 
-	{ MODKEY|ShiftMask    , XK_a          , defaultgaps   , {0} }                                                    , 
-	{ MODKEY              , XK_d          , togglesticky  , {0} }                                                    , 
-	{ MODKEY|ShiftMask    , XK_d          , spawn         , SHCMD("discord") }                                            ,
-	{ MODKEY|ShiftMask    , XK_s          , togglesticky  , SHCMD("") }                                              ,
-	{ MODKEY              , XK_s          , spawn         , {.v = dmenucmd } }                                       , 
-	{ MODKEY              , XK_f          , togglefullscr , {0} }                                                    , 
-	{ MODKEY|ShiftMask    , XK_f          , setlayout     , {.v = &layouts[8]} }                                     , 
-	{ MODKEY              , XK_g          , incrgaps      , {.i = +3 } }                                             , 
-	{ MODKEY|ShiftMask    , XK_g          , incrgaps      , {.i = -3 } }                                             , 
-	{ MODKEY              , XK_h          , setmfact      , {.f = -0.05} }                                           , 
-	{ MODKEY              , XK_l          , setmfact      , {.f = +0.05} }                                           , 
-	/* { MODKEY           , XK_semicolon  , shiftview     , { .i = 1 } }                                             , */
-	/* { MODKEY|ShiftMask , XK_semicolon  , shifttag      , { .i = 1 } }                                             , */
-	{ MODKEY              , XK_apostrophe , togglescratch , {.ui = 1} }                                              , 
-	/* { MODKEY|ShiftMask , XK_apostrophe , spawn         , SHCMD("") }                                              , */
-	{ MODKEY              , XK_Return     , spawn         , {.v = termcmd } }                                        , 
-	{ MODKEY|ShiftMask    , XK_Return     , togglescratch , {.ui = 0} }                                              , 
+	{ MODKEY              , XK_a          , togglegaps    , {0} }                                                    ,
+	{ MODKEY|ShiftMask    , XK_a          , defaultgaps   , {0} }                                                    ,
+	{ MODKEY              , XK_d          , spawn		  , SHCMD("discord") }                                       ,
+	{ MODKEY|ShiftMask    , XK_d          , spawn         , {0} }                                       ,
+	{ MODKEY              , XK_s          , spawn         , {.v = dmenucmd } }                                       ,
+	{ MODKEY|ShiftMask    , XK_s          , togglesticky  , {0} }													 ,
+	{ MODKEY              , XK_f          , togglefullscr , {0} }                                                    ,
+	{ MODKEY|ShiftMask    , XK_f          , setlayout     , {.v = &layouts[8]} }                                     ,
+	{ MODKEY              , XK_g          , incrgaps      , {.i = +3 } }                                             ,
+	{ MODKEY|ShiftMask    , XK_g          , incrgaps      , {.i = -3 } }                                             ,
+	{ MODKEY              , XK_h          , setmfact      , {.f = -0.05} }                                           ,
+	{ MODKEY              , XK_l          , setmfact      , {.f = +0.05} }                                           ,
+	/* { MODKEY           , XK_semicolon  , shiftview     , { .i = 1 } }                                             ,*/
+	/* { MODKEY|ShiftMask , XK_semicolon  , shifttag      , { .i = 1 } }                                             ,*/
+	{ MODKEY              , XK_apostrophe , togglescratch , {.ui = 1} }                                              ,
+	/* { MODKEY|ShiftMask , XK_apostrophe , spawn         , SHCMD("") }                                              ,*/
+	{ MODKEY              , XK_Return     , spawn         , {.v = termcmd } }                                        ,
+	{ MODKEY|ShiftMask    , XK_Return     , togglescratch , {.ui = 0} }                                              ,
 
-	{ MODKEY              , XK_z          , incrgaps      , {.i = +3 } }                                             , 
-	/* { MODKEY|ShiftMask , XK_z          , spawn         , SHCMD("") }                                              , */
-	{ MODKEY              , XK_x          , incrgaps      , {.i = -3 } }                                             , 
-	/* { MODKEY|ShiftMask , XK_x          , spawn         , SHCMD("") }                                              , */
-	{ MODKEY              , XK_c          , spawn         , SHCMD("st -e pulsemixer; kill -44 $(pidof dwmblocks)") } , 
-	/* { MODKEY|ShiftMask , XK_c          , spawn         , SHCMD("") }                                              , */
-	{ MODKEY              , XK_b          , togglebar     , {0} }                                                    , 
-	/* { MODKEY|ShiftMask , XK_b          , spawn         , SHCMD("") }                                              , */
-	/* { MODKEY           , XK_n          , spawn         , SHCMD("st -e nvim -c VimwikiIndex") }                    , */
-	/* { MODKEY|ShiftMask , XK_n          , spawn         , SHCMD("st -e newsboat; pkill -RTMIN+6 dwmblocks") }      , */
-	{ MODKEY              , XK_m          , spawn         , SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") }       , 
-	{ MODKEY|ShiftMask    , XK_m          , spawn         , SHCMD("st -e ncmpcpp") }                                 , 
-	{ MODKEY              , XK_comma      , spawn         , SHCMD("mpc prev") }                                      , 
-	{ MODKEY|ShiftMask    , XK_comma      , spawn         , SHCMD("mpc seek 0%") }                                   , 
-	{ MODKEY              , XK_period     , spawn         , SHCMD("mpc next") }                                      , 
-	{ MODKEY|ShiftMask    , XK_period     , spawn         , SHCMD("mpc repeat") }                                    , 
+	{ MODKEY              , XK_z          , incrgaps      , {.i = +3 } }                                             ,
+	/* { MODKEY|ShiftMask , XK_z          , spawn         , SHCMD("") }                                              ,*/
+	{ MODKEY              , XK_x          , incrgaps      , {.i = -3 } }                                             ,
+	/* { MODKEY|ShiftMask , XK_x          , spawn         , SHCMD("") }                                              ,*/
+	{ MODKEY              , XK_c          , spawn         , SHCMD("st -e pulsemixer; kill -44 $(pidof dwmblocks)") } ,
+	/* { MODKEY|ShiftMask , XK_c          , spawn         , SHCMD("") }                                              ,*/
+	{ MODKEY              , XK_b          , togglebar     , {0} }                                                    ,
+	/* { MODKEY|ShiftMask , XK_b          , spawn         , SHCMD("") }                                              ,*/
+	/* { MODKEY           , XK_n          , spawn         , SHCMD("st -e nvim -c VimwikiIndex") }                    ,*/
+	/* { MODKEY|ShiftMask , XK_n          , spawn         , SHCMD("st -e newsboat; pkill -RTMIN+6 dwmblocks") }      ,*/
+	{ MODKEY              , XK_m          , spawn         , SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") }       ,
+	{ MODKEY|ShiftMask    , XK_m          , spawn         , SHCMD("st -e ncmpcpp") }                                 ,
+	{ MODKEY              , XK_comma      , spawn         , SHCMD("mpc prev") }                                      ,
+	{ MODKEY|ShiftMask    , XK_comma      , spawn         , SHCMD("mpc seek 0%") }                                   ,
+	{ MODKEY              , XK_period     , spawn         , SHCMD("mpc next") }                                      ,
+	{ MODKEY|ShiftMask    , XK_period     , spawn         , SHCMD("mpc repeat") }                                    ,
 
 	/* { MODKEY                                             , XK_Left       , focusmon      , {.i = -1 } }                                             , */
 	/* { MODKEY|ShiftMask                                   , XK_Left       , tagmon        , {.i = -1 } }                                             , */
