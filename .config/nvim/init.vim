@@ -72,33 +72,6 @@ noremap  <leader>,         : noh<CR>
 
 inoremap <m-space> <Esc>/<++><Enter>"_c4l
 
-" java
-autocmd FileType java inoremap ,f for (int i = 0; i < <++>; i++){<Enter><++><Esc>0ki
-
-" html & php
-autocmd FileType html,php inoremap ,b <b></b><Space><++><Esc>FbT>i
-autocmd FileType html,php inoremap ,it <em></em><Space><++><Esc>FeT>i
-autocmd FileType html,php inoremap ,1 <h1></h1><Esc>F<i
-autocmd FileType html,php inoremap ,2 <h2></h2><Esc>F<i
-autocmd FileType html,php inoremap ,3 <h3></h3><Esc>F<i
-autocmd FileType html,php inoremap ,p <p></p><Esc>0f>a
-autocmd FileType html,php inoremap ,a <a<Space>href=""> </a><Esc>F"i
-autocmd FileType html,php inoremap ,e <a<Space>target="_blank"<Space>href=""><++></a><Space><++><Esc>14hi
-autocmd FileType html,php inoremap ,ul <ul><Enter><li></li><Enter></ul><Esc>k>>f<i
-autocmd FileType html,php inoremap ,li <Esc>o<li></li><Esc>F>a
-autocmd FileType html,php inoremap ,ol <ol><Enter><li></li><Enter></ol><Enter><Enter><++><Esc>03kf<i
-autocmd FileType html,php inoremap ,im <img src="" alt="<++>"><++><esc>Fcf"a
-autocmd FileType html,php inoremap ,td <td></td><++><Esc>Fdcit
-autocmd FileType html,php inoremap ,tr <tr></tr><Enter><++><Esc>kf<i
-autocmd FileType html,php inoremap ,th <th></th><++><Esc>Fhcit
-autocmd FileType html,php inoremap ,tab <table><Enter></table><Esc>O
-autocmd FileType html,php inoremap ,gr <font color="green"></font><Esc>F>a
-autocmd FileType html,php inoremap ,rd <font color="red"></font><Esc>F>a
-autocmd FileType html,php inoremap ,yl <font color="yellow"></font><Esc>F>a
-autocmd FileType html,php inoremap ,dt <dt></dt><Enter><dd><++></dd><Enter><++><esc>2kcit
-autocmd FileType html,php inoremap ,dl <dl><Enter><Enter></dl><enter><enter><++><esc>3kcc
-autocmd FileType html,php inoremap &<space> &amp;<space>
-
 autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 
 " in case you forgot to sudo
